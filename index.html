@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kedai Senja - coffee, food, dessert, dan cerita dalam suasana hangat.">
+  <meta name="theme-color" content="#100b07">
+  <title>Kedai Senja - Coffee & Eatery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <a class="logo" href="#home">KEDAI <span>SENJA</span></a>
+  <nav id="navMenu" aria-label="Navigasi utama">
+    <a href="#home">Home</a><a href="#menu">Menu</a><a href="#promo">Promo</a><a href="#gallery">Galeri</a><a href="#contact">Kontak</a>
+  </nav>
+  <div class="nav-actions">
+    <button onclick="openCart()" class="cart-button" type="button" aria-label="Buka keranjang">🛒 <span id="cartCount">0</span></button>
+    <button onclick="toggleMobileMenu()" class="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false" aria-controls="navMenu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home"><div class="hero-content">
+  <p class="eyebrow">COFFEE • FOOD • DESSERT</p>
+  <h1>Sebuah Rasa<br><span>Untuk Setiap Cerita.</span></h1>
+  <p>Nikmati kopi pilihan, makanan lezat, dan dessert dalam suasana hangat Kedai Senja.</p>
+  <div class="hero-buttons"><a href="#menu" class="btn primary">Lihat Menu</a><button onclick="openCart()" class="btn secondary" type="button">Lihat Keranjang</button></div>
+</div></section>
+
+<section class="features">
+  <div class="feature"><span>☕</span><div><h3>Premium Coffee</h3><p>Biji kopi pilihan dengan cita rasa yang nikmat.</p></div></div>
+  <div class="feature"><span>🍽️</span><div><h3>Fresh Food</h3><p>Menu makanan dibuat untuk menemani waktu santaimu.</p></div></div>
+  <div class="feature"><span>✨</span><div><h3>Cozy Place</h3><p>Tempat nyaman untuk nongkrong dan bercerita.</p></div></div>
+</section>
+
+<section class="section menu-section" id="menu"><div class="section-heading"><p class="eyebrow">OUR MENU</p><h2>Menu Kedai Senja</h2><p>Pilih menu favoritmu dan masukkan ke keranjang.</p></div>
+  <div class="menu-tools"><input type="search" id="searchMenu" placeholder="🔍 Cari menu..." aria-label="Cari menu" oninput="filterMenu()"><div class="categories">
+    <button class="category active" data-category="all" onclick="setCategory('all', this)">Semua</button><button class="category" data-category="coffee" onclick="setCategory('coffee', this)">Coffee</button><button class="category" data-category="noncoffee" onclick="setCategory('noncoffee', this)">Non Coffee</button><button class="category" data-category="food" onclick="setCategory('food', this)">Food</button><button class="category" data-category="dessert" onclick="setCategory('dessert', this)">Dessert</button>
+  </div></div>
+  <div id="menuGrid" class="menu-grid"></div><p id="noResult" class="no-result">Menu tidak ditemukan.</p>
+</section>
+
+<section class="promo" id="promo"><div><p class="eyebrow">SPECIAL PROMO</p><h2>Gunakan Voucher SENJA10</h2><p>Dapatkan diskon 10% untuk pesananmu.</p></div><button onclick="copyVoucher()" class="btn primary" type="button">Gunakan Voucher</button></section>
+
+<section class="section gallery-section" id="gallery"><div class="section-heading"><p class="eyebrow">OUR SPACE</p><h2>Galeri Kedai Senja</h2></div><div class="gallery">
+  <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=85" alt="Interior Kedai Senja" loading="lazy"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=85" alt="Suasana kedai" loading="lazy"><img src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=900&q=85" alt="Kopi di meja" loading="lazy"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" alt="Secangkir kopi" loading="lazy">
+</div></section>
+
+<section class="about"><div class="about-image"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85" alt="Ruang Kedai Senja" loading="lazy"></div><div class="about-content"><p class="eyebrow">ABOUT KEDAI SENJA</p><h2>Tempat Bertemu Rasa dan Cerita.</h2><p>Kedai Senja menghadirkan kopi, makanan, dan dessert untuk menemani waktu santai bersama orang-orang tersayang.</p><div class="stats"><div><strong>20+</strong><span>Menu</span></div><div><strong>4.9</strong><span>Rating</span></div><div><strong>5+</strong><span>Tahun</span></div></div></div></section>
+
+<section class="section reviews"><div class="section-heading"><p class="eyebrow">CUSTOMER STORIES</p><h2>Kata Mereka</h2></div><div class="review-grid"><div class="review"><div class="stars">★★★★★</div><p>"Kopinya enak dan tempatnya nyaman."</p><strong>— Pelanggan Kedai Senja</strong></div><div class="review"><div class="stars">★★★★★</div><p>"Cocok banget buat nongkrong sore."</p><strong>— Pelanggan Kedai Senja</strong></div><div class="review"><div class="stars">★★★★★</div><p>"Makanannya enak, harganya juga terjangkau."</p><strong>— Pelanggan Kedai Senja</strong></div></div></section>
+
+<section class="contact" id="contact"><p class="eyebrow">CONTACT</p><h2>Pesan Sekarang</h2><p>Pesananmu akan dikirim ke WhatsApp Kedai Senja.</p><div class="contact-buttons"><a href="https://wa.me/6289676375328" target="_blank" rel="noopener noreferrer" class="btn primary">📱 WhatsApp</a><a href="https://www.google.com/maps/search/?api=1&query=Kedai+Senja" target="_blank" rel="noopener noreferrer" class="btn secondary">📍 Google Maps</a></div><div class="map-container"><iframe src="https://www.google.com/maps?q=PP6P%2BGQP%2C%20Jl.%20Menjangan%204%2C%20Pd.%20Ranji%2C%20Kec.%20Ciputat%20Tim.%2C%20Kota%20Tangerang%20Selatan%2C%20Banten%2015412&output=embed" title="Lokasi Kedai Senja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></section>
+</main>
+
+<footer><div class="logo">KEDAI <span>SENJA</span></div><p>© 2026 Kedai Senja. Semua hak dilindungi.</p></footer>
+
+<div id="cartOverlay" class="overlay" onclick="closeCart()" aria-hidden="true"></div>
+<aside id="cartDrawer" class="cart-drawer" aria-label="Keranjang belanja" aria-hidden="true"><div class="cart-header"><h2>Keranjang</h2><button onclick="closeCart()" type="button" aria-label="Tutup keranjang">✕</button></div><div id="cartItems" class="cart-items" aria-live="polite"></div><div class="cart-bottom"><div class="voucher"><input type="text" id="voucherInput" placeholder="Kode voucher" aria-label="Kode voucher"><button onclick="applyVoucher()" type="button">Pakai</button></div><p id="voucherMessage" class="voucher-message" role="status"></p><div class="summary"><div><span>Subtotal</span><strong id="subtotal">Rp0</strong></div><div id="discountRow" class="discount-row"><span>Diskon</span><strong id="discount">Rp0</strong></div><div class="grand-total"><span>Total</span><strong id="grandTotal">Rp0</strong></div></div><button onclick="openCheckout()" class="checkout-btn" type="button">Lanjut Checkout</button></div></aside>
+
+<div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"><div class="modal-box"><button class="close-modal" onclick="closeCheckout()" type="button" aria-label="Tutup checkout">✕</button><p class="eyebrow">CHECKOUT</p><h2 id="checkoutTitle">Detail Pesanan</h2><label for="customerName">Nama</label><input id="customerName" type="text" placeholder="Nama kamu" autocomplete="name" required><label for="customerPhone">Nomor WhatsApp</label><input id="customerPhone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel" required><label for="orderType">Pesanan</label><select id="orderType"><option value="Pickup">Pickup</option><option value="Dine-in">Dine-in</option></select><label for="orderNote">Catatan</label><textarea id="orderNote" placeholder="Contoh: kurang gula, tanpa bawang, dll."></textarea><div class="checkout-total"><span>Total pembayaran</span><strong id="checkoutTotal">Rp0</strong></div><button onclick="sendWhatsApp()" class="whatsapp-btn" type="button">📱 Pesan via WhatsApp</button></div></div>
+<script src="script.js"></script>
+</body>
+</html>
